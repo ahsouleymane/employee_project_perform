@@ -64,6 +64,8 @@ def employee_form(request, id=0):
         
     return redirect('/employee/list')
 
+# la fonction ci-dessous permet de faire 1000 enregistrements dans la BD
+# Resultat: 133577.08 ms
 
 """
 
@@ -75,7 +77,7 @@ def employee_form(request):
         return render(request, "employee_register/employee_form.html",{'form':form})
     else:
         i = 0
-        while(i < 10):
+        while(i < 1000):
             form = EmployeeForm(request.POST)
             if form.is_valid():
                 form.save()
