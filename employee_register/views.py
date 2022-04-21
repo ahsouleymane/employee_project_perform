@@ -17,17 +17,17 @@ def timer(func):
     @wraps(func)  # Utilisé pour copier les métadonnées func
     def wrapper(*args, **kwargs):
         # Enregistrer l'heure de début
-        start = time.time()
+        start = time.time_ns()
 
         # Execution de la fonction
         result = func(*args, **kwargs)
         
-        duration = (time.time() - start) * 1000
+        duration = (time.time_ns() - start)
 
         # Sortie du temps d'execution sur la console
         print("\n")
 
-        print(bcolors.FAIL + "" + 'view {} takes {:.2f} ms'.format(func.__name__, duration) + "" + bcolors.RESET)
+        print(bcolors.FAIL + "" + 'view {} takes {} ns'.format(func.__name__, duration) + "" + bcolors.RESET)
 
         print("\n")
 
@@ -42,7 +42,7 @@ def employee_list(request):
     context = {'employee_list':Employee.objects.all()}
     return render(request, "employee_register/employee_list.html",context)
 
-
+@timer
 def employee_form(request, id=0):
     if request.method == "GET":
         if id == 0:
