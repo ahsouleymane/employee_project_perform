@@ -42,7 +42,7 @@ def employee_list(request):
     context = {'employee_list':Employee.objects.all()}
     return render(request, "employee_register/employee_list.html",context)
 
-@timer
+
 def employee_form(request, id=0):
     if request.method == "GET":
         if id == 0:
@@ -65,7 +65,6 @@ def employee_form(request, id=0):
     return redirect('/employee/list')
 
 # la fonction ci-dessous permet de faire 1000 enregistrements dans la BD
-# Resultat: 133577.08 ms
 
 """
 
