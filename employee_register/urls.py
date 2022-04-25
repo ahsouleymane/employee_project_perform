@@ -1,11 +1,9 @@
-from xml.etree.ElementInclude import include
-from django import views
 from django.urls import path
-from . import views
+from .migrations.views import create,update,delete
 
 urlpatterns = [
-    path('', views.employee_form, name='employee_insert'), # get and post req. for insert operations
-    path('<int:id>/', views.employee_form, name='employee_update'), # get and post req. for update operations
-    path('delete/<int:id>/', views.employee_delete, name='employee_delete'),
-    path('list/',views.employee_list, name='employee_list'), # get req. to retrieve and display all records
+    path('', create.employee_create, name='employee_insert'), # get and post req. for insert operations
+    path('update/<int:id>/', update.employee_update, name='employee_update'), # get and post req. for update operations
+    path('delete/<int:id>/', delete.employee_delete, name='employee_delete'),
+    path('list/',create.employee_list, name='employee_list'), # get req. to retrieve and display all records
 ]
