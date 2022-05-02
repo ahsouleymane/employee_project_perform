@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('fullname', models.CharField(max_length=100)),
                 ('emp_code', models.CharField(max_length=3)),
                 ('mobile', models.CharField(max_length=15)),
-                ('psition', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='employee_register.position')),
+                ('position', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='employee_register.position')),
             ],
         ),
     ]

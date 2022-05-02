@@ -4,8 +4,9 @@
 <table class="table table-borderless">
     <thead class="border-bottom font-weight-bold">
         <tr>
-            <td>First Name</td>
-            <td>Last Name</td>
+            <td>Full Name</td>
+            <td>Mobile</td>
+            <td>Position</td>
             <td>
                 <a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
                     <i class="fas fa-plus"></i> Add New
@@ -16,8 +17,9 @@
     <tbody>
         {% for employee in employee_list %}
             <tr>
-                <td>{{employee.firstname}}</td>
-                <td>{{employee.lastname}}</td>
+                <td>{{employee.fullname}}</td>
+                <td>{{employee.mobile}}</td>
+                <td>{{employee.position}}</td>
                 <td>
                     <a href="{% url 'employee_update' employee.id %}" class="btn text-secondary px-0">
                         <i class="far fa-edit fa-lg"></i>

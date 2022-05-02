@@ -1,0 +1,31 @@
+{% extends "employee_register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    <div class="row">
+        <div class="col-md-8">
+            {% csrf_token %}
+            {{form | crispy}}
+            <br>
+            <div class="row">
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-success btn-block"><i class="fas fa-database"></i> 
+                Login</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-8">
+                <h5>Si vous n'avez pas de compte, veuillez vous inscrire</h5>
+                <a href="" class="btn btn-secondary btn-block">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <br>
+    
+</form>
+{% endblock content %}

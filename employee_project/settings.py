@@ -81,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'BD_Employee',
-        'USER': 'souleymane',
-        'PASSWORD': '5ouleym@ne44@',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'localhost',
     }
 }
@@ -128,3 +128,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'employee_list'
