@@ -18,6 +18,11 @@
                     <p class="lead font-italic">Python django project for implementing CRUD operations</p>
                     <hr class="my-4">
                     {% block content %}
+                        <a href="{% url 'employee_list' %}" class="btn text-secondary px-0">
+                            <div style="color: blue">
+                                Create new employee
+                            </div>
+                        </a>
                     {% endblock content %}
                     <br>
                 </div>
