@@ -137,3 +137,13 @@ LOGIN_REDIRECT_URL = 'employee_list'
 LOGOUT_REDIRECT_URL = 'login'
 
 PASSWORD_RESET_TIMEOUT = 20
+
+#SMTP Configuration
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'souleymaneah98@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+
