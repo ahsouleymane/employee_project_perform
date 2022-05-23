@@ -4,7 +4,7 @@ from ...forms import EmployeeForm
 from ...models import Employee
 import time
 from django.contrib.auth.forms import UserCreationForm
-
+from django.contrib.auth.decorators import login_required 
 
 class bcolors:
     OK = '\033[92m' #GREEN
@@ -39,6 +39,7 @@ def timer(func):
 
 # Create your views here.
 
+@login_required(login_url='/employee/login/')
 def employee_list(request):
     context = {'employee_list':Employee.objects.all()}
     return render(request, "employee_register/employee_list.html",context)
@@ -59,6 +60,7 @@ def employee_create_account(request):
 
 
 @timer
+@login_required(login_url='/employee/login/')
 def employee_create(request):
     
     if request.method == "GET":

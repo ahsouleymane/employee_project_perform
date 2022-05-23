@@ -34,5 +34,12 @@
             </tr>
         {% endfor %}
     </tbody>
+    <td>
+        <a href="{% url 'logout' %}" class="btn text-secondary px-0">
+            <div style="color: blue">
+                logout
+            </div>
+        </a>
+    </td>
 </table>
 {% endblock content %}
