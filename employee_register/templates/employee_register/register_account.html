@@ -2,7 +2,10 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<form action="" method="post" autocomplete="off">
+{% for message in messages  %}
+<h5 style="color: red;">{{messages}}</h5>
+{% endfor %}
+<form action="{% url 'register_account' %}" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md-8">
             {% csrf_token %}
@@ -16,7 +19,7 @@
                     Back To Login
                 </a>
             </div>
-        </div>
+            </div>
         </div>
     </div> 
 </form>

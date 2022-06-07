@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from ...forms import EmployeeForm
 from ...models import Employee
 import time
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required 
 
 class bcolors:
     OK = '\033[92m' #GREEN
@@ -38,25 +38,15 @@ def timer(func):
 
 # Create your views here.
 
+@login_required(login_url='/employee/login/')
 def employee_list(request):
     context = {'employee_list':Employee.objects.all()}
     return render(request, "employee_register/employee_list.html",context)
 
-# Create register
-
-def employee_create_account(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')
-    else:
-        form = UserCreationForm()
-    return render(request, "employee_register/register_account.html", {'form': form})
 
 # la fonction ci-dessous permet de faire 1000 enregistrements dans la BD
 
-
+@login_required(login_url='/employee/login/')
 @timer
 def employee_create(request):
     

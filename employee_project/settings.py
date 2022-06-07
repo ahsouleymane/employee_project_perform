@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'employee_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
+        'NAME': 'BD_Employee',
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -142,7 +142,7 @@ PASSWORD_RESET_TIMEOUT = 20
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '587'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'souleymaneah98@gmail.com'
 EMAIL_HOST_PASSWORD = ''
