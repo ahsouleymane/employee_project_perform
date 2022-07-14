@@ -6,20 +6,20 @@
         <tr>
             <td>Nom et Prénom</td>
             <td>Téléphone</td>
-            <td>Position</td>
+            <td>Niveau</td>
             <td>
-                <a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
-                    <i class="fas fa-plus"></i> Ajouter Employé
+                <a href="{% url 'etudiant_insert' %}" class="btn btn-outline-danger">
+                    <i class="fas fa-plus"></i> Ajouter Etudiant
                 </a>
             </td>
         </tr>
     </thead>
     <tbody>
-        {% for employee in employee_list %}
+        {% for etudiant in etudiant_list %}
             <tr>
-                <td>{{employee.fullname}}</td>
-                <td>{{employee.mobile}}</td>
-                <td>{{employee.position}}</td>
+                <td>{{etudiant.fullname}}</td>
+                <td>{{etudiant.mobile}}</td>
+                <td>{{etudiant.niveau}}</td>
             </tr>
         {% endfor %}
     </tbody>
